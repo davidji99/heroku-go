@@ -1598,7 +1598,7 @@ func (s *Service) AppWebhookEventList(ctx context.Context, appIdentity string, l
 type Archive struct {
 	Checksum  string    `json:"checksum" url:"checksum,key"`     // checksum for the archive
 	CreatedAt time.Time `json:"created_at" url:"created_at,key"` // when archive was created
-	Month     int       `json:"month" url:"month,key"`           // month of the archive
+	Month     string    `json:"month" url:"month,key"`           // month of the archive
 	Size      int       `json:"size" url:"size,key"`             // size of the archive in bytes
 	URL       string    `json:"url" url:"url,key"`               // url where to download the archive
 	Year      int       `json:"year" url:"year,key"`             // year of the archive
