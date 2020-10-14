@@ -2690,6 +2690,7 @@ type OAuthAuthorization struct {
 		ExpiresIn int    `json:"expires_in" url:"expires_in,key"` // seconds until OAuth grant expires
 		ID        string `json:"id" url:"id,key"`                 // unique identifier of OAuth grant
 	} `json:"grant" url:"grant,key"` // this authorization's grant
+	Description  string `json:"description" url:"description,key"` // description of OAuth authorization
 	ID           string `json:"id" url:"id,key"` // unique identifier of OAuth authorization
 	RefreshToken *struct {
 		ExpiresIn *int `json:"expires_in" url:"expires_in,key"` // seconds until OAuth token expires; may be `null` for tokens with
