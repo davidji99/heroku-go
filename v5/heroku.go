@@ -3910,6 +3910,7 @@ type Space struct {
 	ID           string `json:"id" url:"id,key"`     // unique identifier of space
 	Name         string `json:"name" url:"name,key"` // unique name of space
 	Organization struct {
+		ID   string `json:"id" url:"id,key"`     // unique identifier of organization
 		Name string `json:"name" url:"name,key"` // unique name of team
 	} `json:"organization" url:"organization,key"` // organization that owns this space
 	Region struct {
