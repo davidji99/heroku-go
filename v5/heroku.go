@@ -3941,6 +3941,7 @@ type SpaceCreateOpts struct {
 	Region *string `json:"region,omitempty" url:"region,omitempty,key"` // unique identifier of region
 	Shield *bool   `json:"shield,omitempty" url:"shield,omitempty,key"` // true if this space has shield enabled
 	Team   string  `json:"team" url:"team,key"`                         // unique name of team
+	LogDrainURL string `json:"log_drain_url,omitempty" url:"log_drain_url,omitempty,key"` // log drain url
 }
 
 // Create a new space.
