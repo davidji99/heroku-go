@@ -2725,9 +2725,9 @@ func (s *Service) OAuthAuthorizationCreate(ctx context.Context, o OAuthAuthoriza
 }
 
 // Update an existing OAuth authorization.
-func (s *Service) OAuthAuthorizationUpdate(ctx context.Context, o OAuthAuthorizationUpdateOpts) (*OAuthAuthorization, error) {
+func (s *Service) OAuthAuthorizationUpdate(ctx context.Context, oauthAuthorizationIdentity string, o OAuthAuthorizationUpdateOpts) (*OAuthAuthorization, error) {
 	var oauthAuthorization OAuthAuthorization
-	return &oauthAuthorization, s.Patch(ctx, &oauthAuthorization, fmt.Sprintf("/oauth/authorizations"), o)
+	return &oauthAuthorization, s.Patch(ctx, &oauthAuthorization, fmt.Sprintf("/oauth/authorizations/%v", oauthAuthorizationIdentity), o)
 }
 
 // Delete OAuth authorization.
