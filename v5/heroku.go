@@ -2714,10 +2714,20 @@ type OAuthAuthorizationCreateOpts struct {
 	Scope []string `json:"scope" url:"scope,key"` // The scope of access OAuth authorization allows
 }
 
+type OAuthAuthorizationUpdateOpts struct {
+	Description *string `json:"description,omitempty" url:"description,omitempty,key"` // human-friendly description of this OAuth authorization
+}
+
 // Create a new OAuth authorization.
 func (s *Service) OAuthAuthorizationCreate(ctx context.Context, o OAuthAuthorizationCreateOpts) (*OAuthAuthorization, error) {
 	var oauthAuthorization OAuthAuthorization
 	return &oauthAuthorization, s.Post(ctx, &oauthAuthorization, fmt.Sprintf("/oauth/authorizations"), o)
+}
+
+// Update an existing OAuth authorization.
+func (s *Service) OAuthAuthorizationUpdate(ctx context.Context, o OAuthAuthorizationUpdateOpts) (*OAuthAuthorization, error) {
+	var oauthAuthorization OAuthAuthorization
+	return &oauthAuthorization, s.Patch(ctx, &oauthAuthorization, fmt.Sprintf("/oauth/authorizations"), o)
 }
 
 // Delete OAuth authorization.
